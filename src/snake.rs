@@ -72,7 +72,7 @@ impl Snake {
             }
         }
 
-        return false;
+        false
     }
 
     pub fn handle_input(&mut self, running: &mut bool) {
@@ -123,12 +123,9 @@ impl Snake {
         };
 
         unsafe {
-            self.head_x = SDL_fmod(
-                self.head_x as f64 + self.grid_width as f64,
-                self.grid_width as f64,
-            );
+            self.head_x = SDL_fmod(self.head_x + self.grid_width as f64, self.grid_width as f64);
             self.head_y = SDL_fmod(
-                self.head_y as f64 + self.grid_height as f64,
+                self.head_y + self.grid_height as f64,
                 self.grid_height as f64,
             )
         }
