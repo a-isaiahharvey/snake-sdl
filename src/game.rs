@@ -52,7 +52,7 @@ impl Game {
                 frame_count += 1;
                 frame_duration = frame_end - frame_start;
 
-                // Uupdate the window title after every second.
+                // Update the window title after every second.
                 if frame_end - title_timestamp >= 1000 {
                     renderer.update_window_title(self.score, frame_count);
                     frame_count = 0;
